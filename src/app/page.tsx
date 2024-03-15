@@ -1,113 +1,209 @@
-import Image from "next/image";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import ImageSlider from "@/components/ImageSlider";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import CardTestimoni from "@/components/card/Testimoni";
+import CardConsultation from "@/components/card/Consulation";
+import CardShowcase from "@/components/card/Showcase";
+import CardProduct from "@/components/card/Product";
+
 
 export default function Home() {
+
+  const breadcrumbsItems = ['Home', 'Layanan Design', 'Omah Apik 3'];
+
+  const imagesSlider = [
+    "/image-home-1.jpg",
+    "/image-home-2.jpg",
+    "/image-home-3.jpg",
+    "/image-home-4.jpg",
+  ];
+
+  const detailDesign = {
+    name: "Omah Apik 3",
+    studio: {
+      profile: "/studio-sae.png",
+      name: "Studio SAe"
+    },
+    detail: {
+      type: "Scandinavian",
+      isModified: true,
+      dimension: "15 x 8m",
+      wide: "112m",
+      floor: 2,
+      bedroom: 4,
+      price: "Rp. 32.500.000",
+      consultationPrice: "Rp 560.000.000"
+    },
+    showcases: [
+      {
+        image: "/image-room-1.jpg",
+        label: "Ruang Keluarga",
+        dimension: "2.0 x 2.9"
+      },
+      {
+        image: "/image-room-2.jpg",
+        label: "Kamar tidur",
+        dimension: "4.0 x 3.4"
+      },
+      {
+        image: "/image-room-3.jpg",
+        label: "Ruang Makan & Dapur",
+        dimension: "3.0 x 2.9"
+      },
+      {
+        image: "/image-room-1.jpg",
+        label: "Ruang Kerja",
+        dimension: "2.0 x 2.9"
+      },
+      {
+        image: "/image-room-2.jpg",
+        label: "Kamar Tidur",
+        dimension: "4.0 x 3.4"
+      }
+    ]
+  }
+
+  const productList = [
+    {
+      name: "Omah Apik 1",
+      image: "/image-home-1.jpg",
+      studio: {
+        profile: "/studio-sae.png",
+        name: "Studio SAe"
+      },
+      detail: {
+        type: "Scandinavian",
+        dimension: "15 x 8m",
+        wide: "112m",
+        floor: 2,
+        bedroom: 4,
+        price: "Rp. 32.500.000",
+        consultationPrice: "Rp 560.000.000"
+      }
+    },
+    {
+      name: "Omah Apik 2",
+      image: "/image-home-2.jpg",
+      studio: {
+        profile: "/studio-sae.png",
+        name: "Studio SAe"
+      },
+      detail: {
+        type: "Scandinavian",
+        dimension: "15 x 8m",
+        wide: "112m",
+        floor: 2,
+        bedroom: 4,
+        price: "Rp. 32.500.000",
+        consultationPrice: "Rp 560.000.000"
+      }
+    },
+    {
+      name: "Omah Apik 3",
+      image: "/image-home-3.jpg",
+      studio: {
+        profile: "/studio-sae.png",
+        name: "Studio SAe"
+      },
+      detail: {
+        type: "Scandinavian",
+        dimension: "15 x 8m",
+        wide: "112m",
+        floor: 2,
+        bedroom: 4,
+        price: "Rp. 32.500.000",
+        consultationPrice: "Rp 560.000.000"
+      }
+    },
+    {
+      name: "Omah Apik 4",
+      image: "/image-home-4.jpg",
+      studio: {
+        profile: "/studio-sae.png",
+        name: "Studio SAe"
+      },
+      detail: {
+        type: "Scandinavian",
+        dimension: "15 x 8m",
+        wide: "112m",
+        floor: 2,
+        bedroom: 4,
+        price: "Rp. 32.500.000",
+        consultationPrice: "Rp 560.000.000"
+      }
+    }
+  ]
+
+  const testimonials = [
+    {
+      profile: "/profile.svg",
+      name: "Budi Setiadi",
+      rate: "4.5",
+      testimonial: "Desainnya sangat bagus dan pengirimannya cepat. Terima kasih Sobat Bangun"
+    },
+    {
+      profile: "/profile.svg",
+      name: "Budi Setiadi",
+      rate: "4.5",
+      testimonial: "Desainnya sangat bagus dan pengirimannya cepat. Terima kasih Sobat Bangun"
+    },
+    {
+      profile: "/profile.svg",
+      name: "Budi Setiadi",
+      rate: "4.5",
+      testimonial: "Desainnya sangat bagus dan pengirimannya cepat. Terima kasih Sobat Bangun"
+    }
+  ]
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <Breadcrumbs items={breadcrumbsItems} />
+      <ImageSlider images={imagesSlider} />
+      <section className="container flex flex-col lg:flex-row gap-9 mx-auto pt-6 pb-12 lg:pb-24 px-4 sm:px-0">
+        <div className="flex flex-col gap-4">
+          <h2 className="text-2xl font-semibold">Tampilan Rumah</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {detailDesign.showcases.map((showcase,index) => (
+              <CardShowcase
+                key={index}
+                image={showcase.image}
+                label={showcase.label}
+                dimension={showcase.dimension}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <aside className="flex flex-col gap-8">
+          <CardConsultation name={detailDesign.name} studio={detailDesign.studio} detail={detailDesign.detail} />
+          <div className="flex flex-col gap-4">
+            <h3 className="font-semibold text-2xl">Testimoni</h3>
+            {testimonials.map((testimonial,index) => (
+              <CardTestimoni
+                key={index}
+                profile={testimonial.profile}
+                name={testimonial.name}
+                rate={testimonial.rate}
+                testimonial={testimonial.testimonial}
+              />
+            ))}
+          </div>
+        </aside>
+      </section>
+      <section className="container mx-auto py-[42px] px-4 sm:px-0">
+        <h2 className="text-2xl font-semibold leading-5 mb-6">Desain Lainnya oleh Studio SAe</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {productList.map((product, index) => (
+            <CardProduct
+              key={index}
+              name={product.name}
+              image={product.image}
+              studio={product.studio}
+              detail={product.detail}
+            />
+          ))}
+        </div>
+      </section>
+    </>
   );
 }

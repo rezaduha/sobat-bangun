@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import "../globals.css";
 
 const sansPro = Source_Sans_3({ subsets: ["latin"] });
 
@@ -19,11 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={sansPro.className}>
-        <Navbar />
-        <main>
-          {children}
-        </main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
