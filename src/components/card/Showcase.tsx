@@ -10,7 +10,7 @@ interface CardShowcaseProps {
 const CardShowcase = ({ image, label, dimension } : CardShowcaseProps) => {
   return (
     <div className="flex flex-col gap-6 rounded-lg p-4 border">
-      <Image width={500} height={200} className="rounded" src={image} alt="" />
+      <Image width={500} height={200} className="rounded object-cover w-full" src={image} alt="" />
       <div className="flex flex-col gap-2">
         <h3 className="text-xl font-bold">{label}</h3>
         <span className="text-sm">{dimension}</span>
