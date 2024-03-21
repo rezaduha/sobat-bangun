@@ -13,10 +13,9 @@ export default function Home() {
   const breadcrumbsItems = ['Home', 'Layanan Design', 'Omah Apik 3'];
 
   const imagesSlider = [
-    "/image-home-1.jpg",
-    "/image-home-2.jpg",
-    "/image-home-3.jpg",
-    "/image-home-4.jpg",
+    "/house-1.jpg",
+    "/house-2.jpg",
+    "/house-3.jpg"
   ];
 
   const detailDesign = {
